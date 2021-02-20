@@ -1,0 +1,6 @@
+[submodule "src/app/wooAapi"]
+	path = src/app/wooAapi
+	url = git@github.com:prosenjit-manna/wooApi.git
+[submodule "src/app/wooApi"]
+	path = src/app/wooApi
+	url = git@github.com:prosenjit-manna/wooApi.git

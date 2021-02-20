@@ -1,0 +1,8 @@
+<app-nav ></app-nav>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 col-12 mb-4" *ngFor="let product of products">
+      <app-product-loop [product]="product"></app-product-loop>
+    </div>
+  </div>
+</div>
