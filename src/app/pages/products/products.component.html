@@ -1,5 +1,27 @@
 <app-nav></app-nav>
+
 <div class="container mt-4">
+  <div class="d-flex py-4 justify-content-between">
+    <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-outline-secondary" ngbDropdownToggle>
+        Default sort
+      </button>
+      <div ngbDropdownMenu>
+        <button ngbDropdownItem (click)="sortProducts('date')">Sort by Latest</button>
+        <button ngbDropdownItem (click)="sortProducts('popularity')">Order by popularly</button>
+        <button ngbDropdownItem (click)="sortProducts('price')">Order by Price low to high</button>
+        <button ngbDropdownItem (click)="sortProducts('price-desc')">Order by high to low </button>
+        <button ngbDropdownItem (click)="sortProducts('rating')">Order by rating</button>
+      </div>
+    </div>
+
+    <ngb-pagination
+    (pageChange)="changePage($event)"
+    [collectionSize]="collectionSize"
+    [pageSize]="perPage"
+    [page]="page">
+  </ngb-pagination>
+  </div>
   <div class="row">
     <div class="col-md-4 col-12 mb-4" *ngFor="let product of products">
       <app-product-loop [product]="product"></app-product-loop>
@@ -10,8 +32,7 @@
   <ngb-pagination
     (pageChange)="changePage($event)"
     [collectionSize]="collectionSize"
-    [pageSize]="10"
+    [pageSize]="perPage"
     [page]="page">
   </ngb-pagination>
-
 </div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdownModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { NavModule } from '@components/nav/nav.module';
@@ -18,6 +18,7 @@ const routes: Routes = [{
   imports: [
     CommonModule,
     NgbPaginationModule,
+    NgbDropdownModule,
     RouterModule.forChild(routes),
     ProductLoopModule,
     NavModule,
