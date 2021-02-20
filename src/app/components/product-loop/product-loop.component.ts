@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Product } from '@wooApi/index';
+import { Product } from '@wooApi/api';
 
 @Component({
   selector: 'app-product-loop',

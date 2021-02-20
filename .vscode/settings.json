@@ -1,4 +1,6 @@
 {
   "diffEditor.ignoreTrimWhitespace": false,
-  "files.trimTrailingWhitespace": true
+  "files.trimTrailingWhitespace": true,
+  "prettier.requireConfig": true,
+  "prettier.singleQuote": true
 }

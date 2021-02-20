@@ -1,0 +1,49 @@
+<app-nav></app-nav>
+
+<div class="container my-4" *ngIf="product">
+  <div class="row">
+    <div class="col-md-4 col-12">
+      <img [src]="image.src" [attr.alt]="image.alt" class="img-fluid" *ngFor="let image of product?.images">
+    </div>
+    <div class="col-md-8 col-12">
+      <h1 [innerHtml]="product.name"></h1>
+      <div [innerHtml]="product.price_html"></div>
+      <div [innerHtml]="product.short_description"></div>
+
+      <div>
+        <a [attr.href]="product.external_url" target="_blank" class="btn btn-primary" [innerText]="product.button_text"
+          *ngIf="product.external_url.length > 0">
+        </a>
+
+        <a class="btn btn-primary" *ngIf="product.external_url.length === 0">
+          Add to cart
+        </a>
+      </div>
+
+      <hr>
+      <p class="text-black-50">SKU: {{product.sku}}</p>
+      <p class="text-black-50">Category:
+        <a *ngFor="let cat of product.categories" [routerLink]="['/product-category', cat.id]">
+          {{cat.name}}
+        </a>
+      </p>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+        <h2>Description</h2>
+        <div [innerHTML]="product.description">
+        </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h2>Related Products</h2>
+    </div>
+    <div class="col-md-4 col-12 mb-4" *ngFor="let product of relatedProducts">
+      <app-product-loop [product]="product"></app-product-loop>
+    </div>
+  </div>
+
+</div>

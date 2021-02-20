@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Product, ProductOrder, ProductOrderBy, ProductQuery, WoocommerceProductsService } from '@wooApi/index';
+import { Product, ProductOrder, ProductOrderBy, ProductQuery, WoocommerceProductsService } from '@wooApi/api';
 import { combineLatest } from 'rxjs';
-import { combineAll, switchMap, take } from 'rxjs/operators';
+import {  switchMap, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-products',
