@@ -6,7 +6,7 @@ export const environment = {
   production: false,
 
   origin: 'https://localhost/wp-cart',
-  wcEndpoint: '/wp-json/wc/v2',
+  wcEndpoint: '/wp-json/wc/v3',
   woocommerce: {
     consumer_key:  'ck_ee2c25d2645a0558b0e213428e3432d66e2efb57',
     consumer_secret: 'cs_2eb4a36b8d9a2c0a4716576e5e6dc39ed1a07e9f'

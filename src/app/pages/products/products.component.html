@@ -1,8 +1,17 @@
-<app-nav ></app-nav>
+<app-nav></app-nav>
 <div class="container mt-4">
   <div class="row">
     <div class="col-md-4 col-12 mb-4" *ngFor="let product of products">
       <app-product-loop [product]="product"></app-product-loop>
     </div>
   </div>
+</div>
+<div class="d-flex justify-content-center" *ngIf="products.length">
+  <ngb-pagination
+    (pageChange)="changePage($event)"
+    [collectionSize]="collectionSize"
+    [pageSize]="10"
+    [page]="page">
+  </ngb-pagination>
+
 </div>

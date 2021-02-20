@@ -8,6 +8,11 @@ const routes: Routes = [
       import('./pages/products/products.module').then((m) => m.ProductsModule),
   },
   {
+    path: 'products/:page',
+    loadChildren: () =>
+      import('./pages/products/products.module').then((m) => m.ProductsModule),
+  },
+  {
     path: '',
     redirectTo: 'products',
     pathMatch: 'full',
@@ -20,7 +25,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

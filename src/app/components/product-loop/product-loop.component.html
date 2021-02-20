@@ -5,7 +5,7 @@
   <div class="card-body">
     <h5 class="card-title" [innerHtml]="product.name"></h5>
     <p class="card-text" [innerHtml]="product.short_description"></p>
-    <a href="product.external_url" target="_blank" class="btn btn-primary" [innerText]="product.button_text"
+    <a [attr.href]="product.external_url" target="_blank" class="btn btn-primary" [innerText]="product.button_text"
       *ngIf="product.external_url.length > 0"></a>
     <a class="btn btn-primary" *ngIf="product.external_url.length === 0">
       Add to cart
